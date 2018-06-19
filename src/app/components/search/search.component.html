@@ -1,0 +1,15 @@
+<h1>Resultado de:
+  <small>{{ termino }}</small>
+</h1>
+<hr>
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      Não existe resulta para o termino: {{ termino }}
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+  <app-heroes-tarjeta (HeroeSeleccionado)="verHeroe($event)" [index]="i" [heroe]="heroe" *ngFor="let heroe of heroes; let i = index"></app-heroes-tarjeta>
+</div>
